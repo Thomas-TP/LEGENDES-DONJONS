@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-rpg-dark text-gray-100 font-body;
+    background-image: radial-gradient(ellipse at top, #1a1a2e 0%, #0f0e17 70%);
+    min-height: 100vh;
+  }
+  ::-webkit-scrollbar { width: 8px; }
+  ::-webkit-scrollbar-track { background: #1a1a2e; }
+  ::-webkit-scrollbar-thumb { background: #3a3a5c; border-radius: 4px; }
+}
+
+@layer components {
+  .rpg-panel {
+    @apply bg-rpg-panel border border-rpg-border rounded-lg p-4 shadow-lg;
+  }
+  .rpg-btn {
+    @apply px-4 py-2 rounded-lg font-semibold transition-all duration-200 cursor-pointer
+           border border-rpg-border hover:scale-105 active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+  .rpg-btn-primary {
+    @apply rpg-btn bg-rpg-gold/20 text-rpg-gold border-rpg-gold/50 hover:bg-rpg-gold/30;
+  }
+  .rpg-btn-danger {
+    @apply rpg-btn bg-rpg-red/20 text-rpg-red border-rpg-red/50 hover:bg-rpg-red/30;
+  }
+  .rpg-btn-success {
+    @apply rpg-btn bg-rpg-green/20 text-rpg-green border-rpg-green/50 hover:bg-rpg-green/30;
+  }
+  .rpg-btn-blue {
+    @apply rpg-btn bg-rpg-blue/20 text-rpg-blue border-rpg-blue/50 hover:bg-rpg-blue/30;
+  }
+  .rpg-btn-purple {
+    @apply rpg-btn bg-rpg-purple/20 text-rpg-purple border-rpg-purple/50 hover:bg-rpg-purple/30;
+  }
+  .rpg-title {
+    @apply font-rpg text-rpg-gold text-center;
+  }
+  .hp-bar { @apply h-3 rounded-full bg-rpg-red/80 transition-all duration-500; }
+  .mp-bar { @apply h-2 rounded-full bg-rpg-mana/80 transition-all duration-500; }
+  .xp-bar { @apply h-2 rounded-full bg-rpg-purple/80 transition-all duration-500; }
+
+  .combat-log-entry {
+    @apply py-1 px-2 text-sm border-l-2 my-0.5 animate-[fadeIn_0.3s_ease];
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
