@@ -56,10 +56,10 @@ L'interface web est située dans `src/JeuDeRole.Web/ClientApp` :
 
 ```mermaid
 graph TD
-    Client[Client Web (React)] -->|HTTP API| WebAPI[ASP.NET Core Web API]
-    Console[Console App] -->|Direct Call| CoreLogic
-    WebAPI --> CoreLogic[Core Logic (Services/Domain)]
-    CoreLogic --> Data[Data Access (JSON/Memory)]
+    Client["Client Web (React)"] -->|HTTP API| WebAPI["ASP.NET Core Web API"]
+    ConsoleApp["Console App"] -->|Direct Call| CoreLogic
+    WebAPI --> CoreLogic["Core Logic (Services/Domain)"]
+    CoreLogic --> Data["Data Access (JSON/Memory)"]
     
     subgraph "Core Logic"
     Services --> Domain
